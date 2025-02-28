@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <b>Mat's Auto Answer Multi-tool</b>
 </h1>
 <p align = "center">Tool for automatically answering questions<br>
-    <a>
+    <a href="https://github.com/AtomicGamer9523/MatAutoAnswer/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/AtomicGamer9523/MatAutoAnswer?label=License&color=blue">
     </a> <a href="https://www.github.com/AtomicGamer9523">
         <img src="https://img.shields.io/github/followers/atomicgamer9523?label=AtomicGamer9523%20(Me)&style=social"/>
@@ -41,8 +41,22 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Inject the code of [autoanswer.js](./autoanswer.js) into the currrent page.
 I will add better documentation later.
 
+| Version | Auto-Updates | [Vocab.com](https://vocab.com) | [AP Classroom](https://apclassroom.collegeboard.org) | Google Forms |
+| :-- | :-: | :-: | :-: | :-: |
+| `v6a-dev` (Latest Nightly) | ❌ | ✅ | ✅ | ❌ |
+| `v6-dev` | ❌ | ❌ | ✅ | ❌ |
+| `v5` (Latest Stable) | ❌ | ✅ | ❌ | ❌ |
+| `v4` | ❌ | ✅ | ❌ | ❌ |
+| `v3` (OBSOLETE) | ❌ | ✅ | ❌ | ❌ |
+
+### Documentation for Developers
+
+All of the public API is described in [autoanswer.d.ts](./autoanswer.d.ts).
+Ensure it is being properly loaded.
+
+_Note:_ If you add support for a new platform,
+open a PR so that we all can use it and enjoy it :)
+
 <!-- <a href = "{{BOOKMARKJS}}">
     <img alt = "Mat's Auto Answer Multi-tool" src = "./badge.svg" />
-</a>
-
-Once you are  -->
+</a> -->
