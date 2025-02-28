@@ -26,6 +26,6 @@ try {
     Deno.mkdir(`${cwd}/.build`);
 }
 
-await Deno.copyFile(`${cwd}/.github/badge.svg`, `${cwd}/.build/badge.svg`);
+await Deno.copyFile(`${cwd}/badge.svg`, `${cwd}/.build/badge.svg`);
 const out = await Deno.create(`${cwd}/.build/multitool.html`);
 await out.write(encoder.encode(HTML));
