@@ -38,8 +38,31 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ### How to use ?
 
-Inject the code of [autoanswer.js](./autoanswer.js) into the currrent page.
-I will add better documentation later.
+Drag this bookmark into your bookmarks bar, and click on it to start.
+See [Q&A](#qna) for more info.
+
+Keybinds:
+
+- **`CTRL` + `Insert`**: Opens up the settings,
+this is where you can select the Model to use,
+as well as the API key for it.
+- **`Insert`**: Answer the current question.
+This assumes that the settings are properly configured.
+- **`Delete`**: Panic Mode! The tool will stop responding,
+and can only be re-enabled by once again clicking on the bookmark.
+
+## QnA
+
+**Q:** AI ?<br>
+**A:** Most of the answers require an AI Model to be answered,
+for that you will need an API Token.
+
+**Q:** Where can I get an API Token ?<br>
+**A:** This is dependent on the AI Model you are using.
+I recommend Gemini, as it is free, fast, and quite accurate.
+You can create a free API token [here](https://aistudio.google.com/app/apikey).
+
+## Versions, Models, and Platforms
 
 | Version | Auto-Updates | [Vocab.com](https://vocab.com) | [AP Classroom](https://apclassroom.collegeboard.org) | Google Forms |
 | :-- | :-: | :-: | :-: | :-: |
@@ -49,14 +72,10 @@ I will add better documentation later.
 | `v4` | ❌ | ✅ | ❌ | ❌ |
 | `v3` (OBSOLETE) | ❌ | ✅ | ❌ | ❌ |
 
-### Documentation for Developers
+## Documentation for Developers
 
 All of the public API is described in [autoanswer.d.ts](./autoanswer.d.ts).
 Ensure it is being properly loaded.
 
 _Note:_ If you add support for a new platform,
 open a PR so that we all can use it and enjoy it :)
-
-<!-- <a href = "{{BOOKMARKJS}}">
-    <img alt = "Mat's Auto Answer Multi-tool" src = "./badge.svg" />
-</a> -->

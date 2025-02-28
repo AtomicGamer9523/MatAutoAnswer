@@ -26,7 +26,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /// <reference types = "./autoanswer.d.ts" />
-/// <reference lib = "DOM" />
 
 // This Most likely does not need ANY modification
 (/**@param {MatAutoAnswer.Version} VERSION*/ function (VERSION) {
@@ -178,8 +177,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             this.#models.set(modelName, modelFunc);
         }
         get token() { return this.#token; }
-        get model() { return this.#model; }
-        get clickNextTimeout() { return this.#clickNextTimeout; }
         set token(token) {
             if (typeof token === "string") {
                 this.#token = Option.Some(token);
@@ -191,6 +188,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             }
             this.#token = Option.None;
         }
+        get model() { return this.#model; }
         set model(model) {
             if (typeof model === "string") {
                 this.#model = Option.Some(model);
@@ -202,6 +200,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             }
             this.#model = Option.None;
         }
+        get clickNextTimeout() { return this.#clickNextTimeout; }
         set clickNextTimeout(timeout) {
             if (typeof timeout === "number") {
                 this.#clickNextTimeout = Option.Some(timeout);
@@ -331,7 +330,7 @@ MatAutoAnswer(env => {
             "correct answer\"`', YOU ARE TO RESPOND WITH `ANSWER CHOICE 2. " +
             "$\\boxed{\"correct answer\"}$`\n\nMAKE SURE TO THINK STEP BY " +
             "STEP, AND DON'T MAKE ANY MISTAKES!";
-        let CONFIG = {
+        const CONFIG = {
             safetySettings: [{
                 category: "HARM_CATEGORY_HARASSMENT",
                 threshold: "BLOCK_ONLY_HIGH",

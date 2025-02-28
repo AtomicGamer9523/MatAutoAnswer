@@ -25,6 +25,8 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+/// <reference lib = "DOM" />
+
 /**
  * # Mat's Auto-Answer Multi-tool.
  * 
@@ -424,6 +426,7 @@ declare namespace MatAutoAnswer {
          * const val = MatAutoAnswer.Option.None;
          * ```
         */
+        // deno-lint-ignore no-explicit-any
         readonly None: Option<any, "None">;
     }
     /**
