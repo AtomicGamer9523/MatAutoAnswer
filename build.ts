@@ -27,5 +27,5 @@ try {
 }
 
 await Deno.copyFile(`${cwd}/badge.svg`, `${cwd}/.build/badge.svg`);
-const out = await Deno.create(`${cwd}/.build/multitool.html`);
+const out = await Deno.create(`${cwd}/.build/index.html`);
 await out.write(encoder.encode(HTML));

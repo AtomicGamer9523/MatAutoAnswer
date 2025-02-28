@@ -38,7 +38,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ### How to use ?
 
-Drag this bookmark into your bookmarks bar, and click on it to start.
+Go to [matveit.dev/MatAutoAnswer](https://matveit.dev/MatAutoAnswer),
+and drag the bookmark into your bookmarks bar. Click on it to start.
 See [Q&A](#qna) for more info.
 
 Keybinds:
