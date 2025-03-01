@@ -312,6 +312,14 @@ declare namespace MatAutoAnswer {
         ): Option<Answer>;
         clickNext(): void;
     }
+    /**
+     * A function representing a handler for AI Models.
+     * Basically, the end user will be calling this function,
+     * by providing a `token`, as well as the `prompt`.
+     * The entire job of this function is to in some way,
+     * communicate with the AI Model (over HTTP for example),
+     * and return a Promise of the AI's response.
+    */
     export type AIModel = (
         prompt: Prompt,
         token: Token

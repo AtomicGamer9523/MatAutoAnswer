@@ -44,15 +44,19 @@ See [Q&A](#qna) for more info.
 
 Keybinds:
 
-- **`CTRL` + `Insert`**: Opens up the settings,
+- **`CTRL` + `ALT` + `?`**: Opens up the settings,
 this is where you can select the Model to use,
 as well as the API key for it.
-- **`Insert`**: Answer the current question.
+- **`ALT` + `?`**: Answer the current question.
 This assumes that the settings are properly configured.
 - **`Delete`**: Panic Mode! The tool will stop responding,
 and can only be re-enabled by once again clicking on the bookmark.
 
 ## QnA
+
+**Q:** I am on MacOS, what do I press?<br>
+**A:** Most of the buttons should be the same,
+but instead of `CTRL` you will have to press `⌘`!
 
 **Q:** AI ?<br>
 **A:** Most of the answers require an AI Model to be answered,
@@ -63,15 +67,23 @@ for that you will need an API Token.
 I recommend Gemini, as it is free, fast, and quite accurate.
 You can create a free API token [here](https://aistudio.google.com/app/apikey).
 
+**Q:** What is an AI's API Token ?<br>
+**A:** Basically, most AI platforms use an API Token to process all requests.
+The API token basically says: "Hey, I know this user, I know the account,
+let me process the request and respond". Without that API Token the AI will say:
+"Hey, who is this? I don't trust you... I won't reply!"
+Visually, an API token looks like a jumble of numbers and letters.
+
 ## Versions, Models, and Platforms
 
-| Version | Auto-Updates | [Vocab.com](https://vocab.com) | [AP Classroom](https://apclassroom.collegeboard.org) | Google Forms |
+| Version | MacOS | [Vocab.com](https://vocab.com) | [AP Classroom](https://apclassroom.collegeboard.org) | Google Forms |
 | :-- | :-: | :-: | :-: | :-: |
-| `v6a-dev` (Latest Nightly) | ❌ | ✅ | ✅ | ❌ |
+| `v6b-dev` (Latest Nightly) | ✅ | ✅ | ✅ | ❌ |
+| `v6a-dev` | ❌ | ✅ | ✅ | ❌ |
 | `v6-dev` | ❌ | ❌ | ✅ | ❌ |
 | `v5` (Latest Stable) | ❌ | ✅ | ❌ | ❌ |
 | `v4` | ❌ | ✅ | ❌ | ❌ |
-| `v3` (OBSOLETE) | ❌ | ✅ | ❌ | ❌ |
+| `v3` (OBSOLETE) | ✅ | ✅ | ❌ | ❌ |
 
 ## Documentation for Developers
 

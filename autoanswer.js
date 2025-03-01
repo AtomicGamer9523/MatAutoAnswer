@@ -413,12 +413,26 @@ MatAutoAnswer(env => {
                 )
                     .and(MatAutoAnswer.first)
                     .map(t => this.parseText(t).trim());
-                if (op.isNone) return MatAutoAnswer.Option.None;
-                options.push(op.unwrap());
+                if (op.isSome) {
+                    options.push(op.unwrap());
+                    continue;
+                }
+
+                const attempt2op = MatAutoAnswer.tryGetElemsByClass(
+                    "lrn_contentWrapper", optionDiv
+                )
+                    .and(MatAutoAnswer.first)
+                    .map(t => this.parseText(t).trim());
+
+                if (attempt2op.isSome) {
+                    options.push(attempt2op.unwrap());
+                    continue;
+                }
+                return MatAutoAnswer.Option.None;
             }
 
             if (model === GEMINI_THINKING_NAME || model === GEMINI_FAST_NAME) {
-                const prompt = "QUESTION:\n" + question + "\n\nOPTIONS:" +
+                const prompt = "QUESTION:\n" + question + "\n\nOPTIONS:\n" +
                     options.map((v, i) => `ANSWER OPTION ${i + 1}: \`${v}\``)
                         .join("\n");
                 return MatAutoAnswer.Option.Some(
@@ -506,6 +520,9 @@ MatAutoAnswer(env => {
             try {
                 if (e && e.hasAttribute("aria-label")) {
                     return this.trim(e.getAttribute("aria-label"));
+                }
+                if (e && e.classList.contains("code_line")) {
+                    return this.trim(e.innerText);
                 }
                 for (const child of e.childNodes) {
                     if (child.nodeName === "#text") {
@@ -610,7 +627,7 @@ MatAutoAnswer(env => {
                 } else if (instructions)
                     prompt += "QUESTION:\n" + instructions;
 
-                prompt += "\n\nOPTIONS:" + options
+                prompt += "\n\nOPTIONS:\n" + options
                     .map((v, i) => `ANSWER OPTION ${i + 1}: \`${v}\``)
                     .join("\n");
                 return MatAutoAnswer.Option.Some(
@@ -731,21 +748,25 @@ MatAutoAnswer(env => {
     div.style.left = "0px";
     div.style.top = "0px";
 
+    const version = document.createElement("span");
+    version.innerText = MatAutoAnswer.name;
+    div.appendChild(version);
+
     document.addEventListener("keydown", async function (e) {
         if (panicmode) return;
-        if (e.code === "Delete") {
+        if (e.key === "Delete") {
             console.warn("PANIC MODE ACTIVATED!");
             div.style.opacity = "0";
             panicmode = true;
             return;
         }
-        if (e.code !== "Insert") return;
+        if (!e.altKey || e.code !== "Slash") return;
         if (e.ctrlKey) {
             if (div.style.opacity !== "0") div.style.opacity = "0";
             else div.style.opacity = "1";
             return;
         }
-        await env.call()
+        await env.call();
     });
 
     const selector = document.createElement("select");
@@ -760,11 +781,18 @@ MatAutoAnswer(env => {
     }
     div.appendChild(selector);
 
+    const INPUT_ID = MatAutoAnswer.name + " API TOKEN INPUT";
     const textbox = document.createElement("input");
+    textbox.id = INPUT_ID;
     textbox.setAttribute("align", "center");
     textbox.style.margin = "5px";
     textbox.oninput = () => env.token = textbox.value;
     textbox.type = "password";
+    const textboxLabel = document.createElement("label");
+    textboxLabel.setAttribute("for", INPUT_ID);
+    textboxLabel.innerText = "AI's API Token:";
+    textboxLabel.style.whiteSpace = "nowrap";
+    div.appendChild(textboxLabel);
     div.appendChild(textbox);
 
     selector.oninput(void 0);
