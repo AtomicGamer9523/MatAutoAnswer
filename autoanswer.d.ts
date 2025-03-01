@@ -166,7 +166,7 @@ declare namespace MatAutoAnswer {
     > = _And<T, _V, _V2>; // Rare circumstance, don't count on it :)
 
     /** The version of the current library */
-    export type Version = "v6a-dev";
+    export type Version = "v6b-dev";
     /** Guards a certain type, this is only useful for type-hinting. */
     export type Guard<T, ID extends string> = T & _Guard<ID>;
     /** An AI-Response type. Essentially a {@link string} */

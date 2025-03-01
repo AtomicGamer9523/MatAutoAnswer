@@ -303,7 +303,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     } else {
         globalThis["MatAutoAnswer"] = MatAutoAnswer;
     }
-})("v6a-dev");
+})("v6b-dev");
 
 MatAutoAnswer(env => {
     const GEMINI_THINKING_NAME = "Gemini 2.0 Multiple-choice Smart";

@@ -40,7 +40,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Go to [matveit.dev/MatAutoAnswer](https://matveit.dev/MatAutoAnswer),
 and drag the bookmark into your bookmarks bar. Click on it to start.
-See [Q&A](#qna) for more info.
+Make sure to check the [Q&A](#qna) for more info.
 
 Keybinds:
 

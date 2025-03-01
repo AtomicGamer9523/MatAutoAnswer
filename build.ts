@@ -27,6 +27,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 if (!Deno) throw "This assumes you are using Deno!";
 
+/// <reference types = "./autoanswer.d.ts" />
+
+const VERSION: MatAutoAnswer.Version = "v6b-dev";
+
 import * as esbuild from "npm:esbuild";
 
 const cwd = Deno.cwd().replaceAll(/\\/g,"/");
@@ -42,7 +46,7 @@ for (const warning of result.warnings) {
 }
 
 const HTML = '<a href="javascript:' + encodeURIComponent(result.code) +
-`"><img alt="Mat's Auto Answer Multi-tool"src="./badge.svg"/></a>`;
+`"><img alt="Mat's Auto Answer Multi-tool ${VERSION}"src="./badge.svg"/></a>`;
 const encoder = new TextEncoder();
 
 try {
