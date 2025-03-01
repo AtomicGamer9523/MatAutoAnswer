@@ -47,10 +47,10 @@ const encoder = new TextEncoder();
 
 try {
     for await (const item of Deno.readDir(`${cwd}/.build`)) {
-        Deno.remove(item.name, { recursive: true });
+        await Deno.remove(item.name, { recursive: true });
     }
 } catch (_e) {
-    Deno.mkdir(`${cwd}/.build`);
+    await Deno.mkdir(`${cwd}/.build`);
 }
 
 await Deno.copyFile(`${cwd}/badge.svg`, `${cwd}/.build/badge.svg`);
